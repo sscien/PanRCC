@@ -31,7 +31,10 @@ scp -r y.song@compute1-client-1.ris.wustl.edu://storage1/fs1/dinglab/Active/Proj
 bash /diskmnt/Projects/Users/austins2/tools/inferCNV/convert-cnv-predictions-to-matrix-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_matrices_input_table.txt -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/outputs/
 
 ### plot CNV for each sample
-bash /diskmnt/Projects/Users/austins2/tools/inferCNV/plotting-cnvs-per-cluster-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_plotting_input_table.txt -m /diskmnt/Projects/Pan_RCC/data/2.Seurat_obj/2023_01/metadata/rcc_65_samples_metadata_v1.txt -g SMAD4,CDKN2A,TP53,ARID1A,PTEN,MYC,KRAS,ERBB2,AKT2,GATA6 -o .
+bash /diskmnt/Projects/Users/austins2/tools/inferCNV/plotting-cnvs-per-cluster-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_plotting_input_table.txt -m /diskmnt/Projects/Pan_RCC/data/2.Seurat_obj/2023_01/metadata/rcc_65_samples_metadata_v1.txt -g SMAD4,CDKN2A,TP53,ARID1A,PTEN,MYC,KRAS,ERBB2,AKT2,GATA6 -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/figures/individual/
+
+## Add main CNV events to the meta data
+
 
 ###
 library(tidyverse)
