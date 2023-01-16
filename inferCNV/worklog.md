@@ -32,3 +32,7 @@ bsub -n 8 -N -u ysongwustl@gmail.com -oo /storage1/fs1/dinglab/Active/Projects/y
 scp -r y.song@compute1-client-1.ris.wustl.edu://storage1/fs1/dinglab/Active/Projects/ysong/Projects/PanRCC/inferCNV/v1_2023_01/outputs /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/
 
 ## 4 Post-processing
+
+### generate input_table.txt
+
+bash /diskmnt/Projects/Users/austins2/tools/inferCNV/convert-cnv-predictions-to-matrix-v3.sh -t /path/to/infercnv_matrices_input_table.txt -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/outputs
