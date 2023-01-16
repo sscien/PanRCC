@@ -1,3 +1,6 @@
+## 0 Process seurat object to generate annotation and raw matrix files
+
+
 ## 1 transfer annotation and raw matrix file from katmai to compute1
 scp -r /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/ y.song@compute1-client-1.ris.wustl.edu://storage1/fs1/dinglab/Active/Projects/ysong/Projects/PanRCC/
 
