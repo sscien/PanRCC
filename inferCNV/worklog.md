@@ -22,7 +22,13 @@ export LSF_DOCKER_VOLUMES="/storage1/fs1/dinglab/Active:/storage1/fs1/dinglab/Ac
 bash /storage1/fs1/dinglab/Active/Projects/ysong/pipelines/inferCNV/run_inferCNV_compute1.trinityctat.sh -T /storage1/fs1/dinglab/Active/Projects/ysong/Projects/PanRCC/inferCNV/v1_2023_01/inputs/annotations_file/reference_cells.txt -D /storage1/fs1/dinglab/Active/Projects/ysong/Projects/PanRCC/inferCNV/v1_2023_01/
 ```
 
-
+```
+[y.song@compute1-client-1 cellranger_processed]$ bjobs
+JOBID   USER    STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
+597972  y.song  RUN   general    compute1-cl 12*compute1 *8-2020-A" Jan 16 02:56
+597925  y.song  RUN   dinglab    compute1-cl 12*compute1 *38-2020-A Jan 16 02:28
+597976  y.song  PEND  general    compute1-cl             *8-2020-A" Jan 16 02:58
+```
 
 ### Option2  batch jobs with log files written
 
