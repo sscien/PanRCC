@@ -39,24 +39,30 @@ bsub -n 8 -N -u y.song@wustl.edu -oo /storage1/fs1/dinglab/Active/Projects/ysong
 ## 3 Transfer output back to katmai
 
 #On katmai,
+```
 scp -r y.song@compute1-client-1.ris.wustl.edu://storage1/fs1/dinglab/Active/Projects/ysong/Projects/PanRCC/inferCNV/v1_2023_01/outputs /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/
-
+```
 ## 4 Post-processing
 
 ### generate input_table.txt
-head -2 /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_matrices_input_table.txt
 
+```
+head -2 /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_matrices_input_table.txt
+```
 CPT0001540013	/diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/outputs/20230114/CPT0001540013/infercnv.20_HMM_predHMMi6.leiden.hmm_mode-subclusters.Pnorm_0.5.repr_intensities.observations.txt	RCC	/diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/outputs/20230114/CPT0001540013/infercnv.20_HMM_predHMMi6.leiden.hmm_mode-subclusters.Pnorm_0.5.repr_intensities.references.txt
 CPT0001220012	/diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/outputs/20230114/CPT0001220012/infercnv.20_HMM_predHMMi6.leiden.hmm_mode-subclusters.Pnorm_0.5.repr_intensities.observations.txt	RCC	/diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/outputs/20230114/CPT0001220012/infercnv.20_HMM_predHMMi6.leiden.hmm_mode-subclusters.Pnorm_0.5.repr_intensities.references.txt
 
 ### generate gene level cnv output for each sample
-bash /diskmnt/Projects/Users/austins2/tools/inferCNV/convert-cnv-predictions-to-matrix-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_matrices_input_table.txt -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/outputs/
 
+```
+bash /diskmnt/Projects/Users/austins2/tools/inferCNV/convert-cnv-predictions-to-matrix-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_matrices_input_table.txt -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/outputs/
+```
 ### plot CNV for each sample and add CNV to rds file
 
 #### need to provide gene of interest as input
+```
 bash /diskmnt/Projects/Users/ysong/program/inferCNV_katmai/plotting-cnvs-per-cluster-v3.sh -t /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/inputs/infercnv_plotting_input_table.txt -m /diskmnt/Projects/Pan_RCC/data/2.Seurat_obj/2023_01/metadata/rcc_65_samples_metadata.txt -g VHL,PBRM1,SETD2,BAP1,MTOR,KDM5C,TP53,PTEN,PIK3CA,TSC1,TET2,RID1A,SMAD4,CDKN2A,TP53,ARID1A,PTEN,MYC,KRAS,ERBB2,AKT2,GATA6 -o /diskmnt/Projects/Pan_RCC/Analysis/inferCNV/v1_2023_01/post_processing/20230106/figures/individual/
-
+```
 ## Add main CNV events to the meta data
 library(tidyverse)
 library(Seurat)
