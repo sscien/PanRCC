@@ -86,6 +86,8 @@ merged_obj <- subset_list[[1]]
 # Remove first sample from the list
 subset_list <- subset_list[[-1]]
 
+merged_obj <- merge(merged_obj, subset_list[[1]])
+
 # Loop over remaining samples and merge with the merged object
 for (i in seq_along(subset_list)) {
   print(paste("Combining sample", i+1, subset_list[[i]]@meta.data$sample_id[1], sep = " "))
@@ -103,6 +105,5 @@ gc()
 rcc <-readRDS("/diskmnt/Projects/ccRCC_scratch/RCC_snRNA_2022/Results/output/RCC_RNA_merging_cluster_v1.5/may2022_65_samples/RCC_may2022_65_samples_merged_RNA_and_SCT_1_resolution.rds")
 merged_obj <- merge(merged_obj, rcc)
 saveRDS(merged_obj, paste0(out_path, "/PanRCC_67_samples_merged_obj_mt_", mt, "_nCount_", nCount, "_nFeature_", nFeature, ".rds"))
-
 
 ```
