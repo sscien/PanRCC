@@ -21,3 +21,10 @@ cd /storage1/fs1/dinglab/Active/Projects/ysong/Projects/Docker
 bash /storage1/fs1/dinglab/Active/Projects/ysong/Projects/Docker/methyl-pipeline/build_docker.sh
 ```
 bash /storage1/fs1/dinglab/Active/Projects/ysong/Projects/Docker/Seurat/build_seurat_docker_v0.8.sh
+
+
+## Pull docker to do the job
+
+```
+
+```
