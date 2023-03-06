@@ -60,39 +60,12 @@ cp -r /diskmnt/Projects/Users/ysong/project/methylation/batch_1123/ /diskmnt/Pro
 
 /diskmnt/Projects/cptac_scratch/CPTAC3_analysis/Methylation_hg38/batch_1123/
 
-# Read in arguments
-Path=$1
-Batch_name=$2
-Sample=$3
-cd $Path
-
-## Make directory
-
-cd /diskmnt/Projects/Users/ysong/project/methylation/
-mkdir batch_1123
-cd batch_1123
-
-## Make input
-python $cptac_methyl/make_pipeline_input.py ${Path} ${Batch_name} ${Sample}
-
-#python $cptac_methyl/make_pipleline_input_v1.3.py /diskmnt/Projects/Users/ysong/project/methylation/batch0318_22 batch0318_22 /diskmnt/Projects/Users/ysong/project/methylation/batch0318_22/Methylation_Array.analysis_SN.dat
-
-python /diskmnt/Projects/Users/ysong/Projects/cptac_methylation/make_pipeline_input_v1.3.py /diskmnt/Projects/Users/ysong/project/methylation/batch_1123/ batch_1123 /diskmnt/Projects/Users/ysong/project/cptac_analysis/batch_22_11_23/Methylation_Array.run_list.tsv
 
 #### Analysis description
 cp /diskmnt/Projects/Users/wliang/CPTAC_Pancan_Methylation/09_Pipeline/20211019_batch_1021/Processed_hg38_remap/cptac_methylation_analysis.txt /diskmnt/Projects/Users/ysong/project/methylation/batch0318_22/Processed/Processed_hg38_remap
 
 cp -r /diskmnt/Projects/Users/wliang/CPTAC_Pancan_Methylation/00_Scripts /diskmnt/Projects/Users/ysong/project/jupyter_lab/Methylation
 
-## Softlink IDAT files
-## Softlink IDAT files
-# for i in `cat /diskmnt/Projects/Users/ysong/Projects/Datasets/CPTAC3.catalog/katmai.BamMap.dat ${Sample}| grep Methylation | awk -F "\t" '{OFS="\t"; print $6}'`; do ln -s $i ${Path}; done
-## Pipeline
-Rscript $cptac_methyl/cptac_methylation_v1.1.R ${Path} |& tee tmux.methylation.log
-
-Rscript $cptac_methyl/cptac_methylation_liftover.R ${Path}/Processed |& tee tmux.mapping.log
-
-
-Hi @Matt Check out the methylation result here, README will be provided later. Please let me know if you have any concerns.
+Hi @Rita Check out the methylation result here, README will be provided later. Please let me know if you have any concerns.
 hg19 /diskmnt/Projects/cptac_scratch/CPTAC3_analysis/Methylation_hg38/batchFeb22/Processed/
 hg38 /diskmnt/Projects/cptac_scratch/CPTAC3_analysis/Methylation_hg38/batchFeb22/Processed/Processed_hg38_remap/
