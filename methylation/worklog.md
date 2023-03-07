@@ -54,12 +54,11 @@ bash /storage1/fs1/dinglab/Active/Projects/PanRCC/Data/Analysis/KIRC_methylation
 ```
 ## after the job was finished
 
-cp -r /diskmnt/Projects/Users/ysong/project/methylation/batch_1123/ /diskmnt/Projects/cptac_scratch/CPTAC3_analysis/Methylation_hg38
+scp -r y.song@compute1-client-1.ris.wustl.edu://storage1/fs1/dinglab/Active/Projects/PanRCC/Data/Analysis/KIRC_methylation/2023_03_KIRC/ /diskmnt/Projects/Pan_RCC/Analysis/Methylation/
 
 ## result folder
 
-/diskmnt/Projects/cptac_scratch/CPTAC3_analysis/Methylation_hg38/batch_1123/
-
+/diskmnt/Projects/Pan_RCC/Analysis/Methylation/2023_03_KIRC/Processed
 
 #### Analysis description
 cp /diskmnt/Projects/Users/wliang/CPTAC_Pancan_Methylation/09_Pipeline/20211019_batch_1021/Processed_hg38_remap/cptac_methylation_analysis.txt /diskmnt/Projects/Users/ysong/project/methylation/batch0318_22/Processed/Processed_hg38_remap
